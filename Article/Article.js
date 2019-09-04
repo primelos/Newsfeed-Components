@@ -87,7 +87,55 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+const container = document.querySelector('.articles')
+// data.forEach(data => {
+//   console.log('creating panel', data.title)
+//   container.appendChild(createPanel(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+// })
 
+
+function createPanel(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const divArtilcle = document.createElement('div')
+  const cardTitle = document.createElement('h2');
+  const date1 = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+
+  divArtilcle.appendChild(cardTitle);
+  divArtilcle.appendChild(date1);
+  divArtilcle.appendChild(p1);
+  divArtilcle.appendChild(p2);
+  divArtilcle.appendChild(p3);
+  divArtilcle.appendChild(span);
+
+  divArtilcle.classList.add('article');
+  date1.classList.add('date');
+  span.classList.add('expandButton');
+
+  cardTitle.textContent = title;
+  date1.textContent = date;
+  p1.textContent = firstParagraph;
+  console.log(p1)
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+  span.textContent = "\u2304";
+
+  span.addEventListener('click', (event) =>{
+    console.log('clicked')
+    divArtilcle.classList.toggle('article-open');
+    divArtilcle.classList.toggle('close')
+  })
+  return divArtilcle;
+}
+const lambda = data.map((data) => {
+  container.appendChild(createPanel(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph, data.forthParagraph))
+})
+
+let addArticle = document.getEle('data')
+console.log(addArticle)
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
