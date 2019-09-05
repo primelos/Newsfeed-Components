@@ -134,8 +134,8 @@ const lambda = data.map((data) => {
   container.appendChild(createPanel(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph, data.forthParagraph))
 })
 
-let addArticle = document.getEle('data')
-console.log(addArticle)
+// let addArticle = document.getEle('data')
+// console.log(addArticle)
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
